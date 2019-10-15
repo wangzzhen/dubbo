@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dubbo</groupId>
+  <artifactId>dubbo-provider</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- 版本 -->
+  <properties>
+  	<api.verison>0.0.1-SNAPSHOT</api.verison>
+  	<spring.version>2.1.6.RELEASE</spring.version>
+  	<mysql.version>8.0.16</mysql.version>
+  	<dubbo.version>2.7.3</dubbo.version>
+  	<curator.version>4.2.0</curator.version>
+  </properties>
+  
+  <dependencies>
+  	<!-- 引入公共接口包 -->
+  	<dependency>
+  		<groupId>com.dubbo</groupId>
+    	<artifactId>dubbo-api</artifactId>
+    	<version>${api.verison}</version>
+  	</dependency>
+  	<!-- springboot与dubbo的依赖 -->
+  	<dependency>
+  		<groupId>org.apache.dubbo</groupId>
+    	<artifactId>dubbo-spring-boot-starter</artifactId>
+    	<version>${dubbo.version}</version>
+  	</dependency>
+  	<!-- 由于我们使用zookeeper作为注册中心，所以需要操作zookeeper 
+  			dubbo 2.6以前的版本引入zkclient操作zookeeper 
+            dubbo 2.6及以后的版本引入curator操作zookeeper  -->
+    <!-- curator-framework -->
+    <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-framework</artifactId>
+        <version>${curator.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-recipes</artifactId>
+        <version>${curator.version}</version>
+    </dependency>
+    
+    <!-- spring boot 相关依赖 -->
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>${spring.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-test</artifactId>
+    	<version>${spring.version}</version>
+    	<scope>test</scope>
+  	</dependency>
+  	
+  	<!-- mysql相关依赖 -->
+  	<dependency>
+  		<groupId>mysql</groupId>
+    	<artifactId>mysql-connector-java</artifactId>
+    	<version>${mysql.version}</version>
+    	<scope>runtime</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-jdbc</artifactId>
+    	<version>${spring.version}</version>
+  	</dependency>
+  </dependencies>
+</project>

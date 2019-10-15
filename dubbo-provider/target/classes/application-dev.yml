@@ -1,0 +1,33 @@
+#server
+server: 
+  port: 8080
+  servlet: 
+    context-path: /dubbo-provider
+    
+#dubbo
+dubbo: 
+  #当前应用名字，用于计算依赖关系
+  application: 
+    name: dubbo-provider
+  #通信协议和端口
+  protocol: 
+    name: dubbo
+    port: 20880
+  #注册中心的协议和地址
+  registry: 
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+  #监控
+  monitor:
+    protocol: registry
+  #开启包扫描，可以替代@EnableDubbo 注解
+  #scan: 
+    #base-packages: dubbo.provider.impl
+    
+#datasource
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
