@@ -7,7 +7,7 @@
     <!-- 版本 -->
   <properties>
   	<api.verison>0.0.1-SNAPSHOT</api.verison>
-  	<spring.version>2.1.6.RELEASE</spring.version>
+  	<spring.version>2.5.12</spring.version>
   	<mysql.version>8.0.16</mysql.version>
   	<dubbo.version>2.7.3</dubbo.version>
   	<curator.version>4.2.0</curator.version>
